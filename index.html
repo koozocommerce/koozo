@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koozo - Premium Lifestyle & Wellness Products</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://cdn.shopify.com/s/files/1/0690/0160/9408/files/favicon.png">
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #000000;
+            --secondary: #ff6b6b;
+            --text: #1a1a1a;
+            --text-light: #666666;
+            --bg-light: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        /* ============================================
+           HEADER / NAVIGATION
+        ============================================ */
+        .header {
+            background: white;
+            padding: 15px 0;
+            border-bottom: 1px solid #e5e5e5;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        .header-icons {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .header-icons a {
+            color: var(--text);
+            font-size: 20px;
+            transition: color 0.3s;
+        }
+
+        .header-icons a:hover {
+            color: var(--secondary);
+        }
+
+        /* ============================================
+           HERO SECTION
+        ============================================ */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 100px 40px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: white;
+            color: var(--primary);
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            color: var(--primary);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 16px 40px;
+            border: 2px solid white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* ============================================
+           FEATURES BAR
+        ============================================ */
+        .features-bar {
+            background: var(--primary);
+            color: white;
+            padding: 20px 40px;
+        }
+
+        .features-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .feature-item i {
+            font-size: 24px;
+            color: #ffd700;
+        }
+
+        .feature-item span {
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        /* ============================================
+           CATEGORIES SECTION
+        ============================================ */
+        .categories {
+            padding: 80px 40px;
+            background: white;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 18px;
+        }
+
+        .categories-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .category-card {
+            background: var(--bg-light);
+            border-radius: 20px;
+            padding: 40px 20px;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.4s;
+            border: 2px solid transparent;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: var(--secondary);
+        }
+
+        .category-card i {
+            font-size: 48px;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .category-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+
+        .category-card p {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        /* ============================================
+           FEATURED PRODUCTS
+        ============================================ */
+        .featured-products {
+            padding: 80px 40px;
+            background: var(--bg-light);
+        }
+
+        .products-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            text-decoration: none;
+            transition: all 0.4s;
+            border: 1px solid #e5e5e5;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 280px;
+            background: #f5f5f5;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.08);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--secondary);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .product-info {
+            padding: 25px;
+        }
+
+        .product-info h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .product-price {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .product-price .current {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--text);
+        }
+
+        .product-price .original {
+            font-size: 16px;
+            color: var(--text-light);
+            text-decoration: line-through;
+        }
+
+        .add-to-cart {
+            width: 100%;
+            background: var(--primary);
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .add-to-cart:hover {
+            background: #333;
+        }
+
+        /* ============================================
+           BRANDS SECTION
+        ============================================ */
+        .brands {
+            padding: 80px 40px;
+            background: white;
+        }
+
+       .brands-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding: 50px;
+}
+
+.brand-card {
+    background: #e5e8ef;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 220px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.brand-card img {
+    max-width: 70%;
+    transition: transform 0.4s ease;
+}
+
+/* Hover effect */
+.brand-card:hover {
+    transform: translateY(-8px);
+}
+
+.brand-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.6),
+        transparent
+    );
+    transition: 0.6s;
+}
+
+.brand-card:hover::before {
+    left: 100%;
+}
+
+        /* ============================================
+           TESTIMONIALS
+        ============================================ */
+        .testimonials {
+            padding: 80px 40px;
+            background: var(--bg-light);
+        }
+
+        .testimonials-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        .stars {
+            color: #ffd700;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-card p {
+            color: var(--text);
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .author-info h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+
+        .author-info span {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        /* ============================================
+           CTA SECTION
+        ============================================ */
+        .cta-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 100px 40px;
+            text-align: center;
+            color: white;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .cta-content p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        /* ============================================
+           FOOTER
+        ============================================ */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 80px 40px 30px;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 50px;
+        }
+
+        .footer-brand h3 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .footer-brand p {
+            color: #aaa;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            transition: background 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--secondary);
+        }
+
+        .footer-column h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-column a {
+            display: block;
+            color: #aaa;
+            text-decoration: none;
+            margin-bottom: 12px;
+            transition: color 0.3s;
+        }
+
+        .footer-column a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+            text-align: center;
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        /* ============================================
+           RESPONSIVE
+        ============================================ */
+        @media (max-width: 992px) {
+            .nav-links {
+                display: none;
+            }
+
+            .categories-grid,
+            .products-grid,
+            .brands-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .features-content {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .categories-grid,
+            .products-grid,
+            .brands-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-content">
+           <a href="/" class="logo">
+    <img src="https://www.koozo.com/cdn/shop/files/Untitled_design_19.png?v=1767965591&width=500" 
+         alt="KOOZO Logo" 
+         style="height: 66px; width: auto;">
+</a>
+
+            <nav class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">Blog</a>
+                <a href="https://www.koozo.com/pages/about-us">About</a>
+                <a href="https://www.koozo.com/pages/contact">Contact</a>
+            </nav>
+            <div class="header-icons">
+                <a href="https://www.koozo.com/"><i class="fas fa-user"></i></a>
+                <a href="https://www.koozo.com/cart"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-tag">✨ Premium Quality Products</span>
+            <h1>Buy online Fashion, Gadgets, Beauty, Essentials and Wellness Products</h1>
+            <p>Koozo Commerce – Your go-to destination for beauty, wellness, home, fashion, Gadgets & more. 100% authentic products with Cash on Delivery available.</p>
+            <div class="hero-buttons">
+                <a href="https://www.koozo.com/collections/all" class="btn-primary">Shop Now</a>
+                <a href="https://www.koozo.com/pages/our-brands" class="btn-secondary">Explore Brands</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES BAR -->
+    <div class="features-bar">
+        <div class="features-content">
+            <div class="feature-item">
+                <i class="fas fa-shipping-fast"></i>
+                <span>FREE EXPRESS SHIPPING</span>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-shield-alt"></i>
+                <span>PREMIUM PRODUCTS</span>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-money-bill-wave"></i>
+                <span>CASH ON DELIVERY AVILABLE</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- CATEGORIES -->
+    <section class="categories">
+        <div class="section-header">
+            <h2>Shop By Category</h2>
+            <p>Find exactly what you're looking for</p>
+        </div>
+        <div class="categories-grid">
+            <a href="https://www.koozo.com/collections/kitchen-drinkware" class="category-card">
+                <i class="fas fa-utensils"></i>
+                <h3>Kitchen & Drinkware</h3>
+                <p>Smart kitchen essentials</p>
+            </a>
+            <a href="https://www.koozo.com/collections/home-lifestyle" class="category-card">
+                <i class="fas fa-home"></i>
+                <h3>Home & Lifestyle</h3>
+                <p>Comfort meets style</p>
+            </a>
+            <a href="https://www.koozo.com/collections/health-wellness" class="category-card">
+                <i class="fas fa-heartbeat"></i>
+                <h3>Health & Wellness</h3>
+                <p>Your wellbeing matters</p>
+            </a>
+            <a href="https://www.koozo.com/collections/kids" class="category-card">
+                <i class="fas fa-child"></i>
+                <h3>Kids</h3>
+                <p>Safe & fun products</p>
+            </a>
+            <a href="https://www.koozo.com/collections/fashion" class="category-card">
+                <i class="fas fa-tshirt"></i>
+                <h3>Fashion</h3>
+                <p>Style that speaks</p>
+            </a>
+            <a href="https://www.koozo.com/collections/beauty" class="category-card">
+                <i class="fas fa-spa"></i>
+                <h3>Beauty</h3>
+                <p>Glow naturally</p>
+            </a>
+            <a href="https://www.koozo.com/products/qorfit-pulse-smart-health-tracker" class="category-card">
+                <i class="fas fa-dumbbell"></i>
+                <h3>Fitness</h3>
+                <p>Stay active, stay strong</p>
+            </a>
+            <a href="https://www.koozo.com/collections/hydration" class="category-card">
+                <i class="fas fa-tint"></i>
+                <h3>Hydration</h3>
+                <p>Stay refreshed</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- FEATURED PRODUCTS -->
+    <section class="featured-products">
+        <div class="section-header">
+            <h2>Bestsellers</h2>
+            <p>Our customers' favorite picks</p>
+        </div>
+        <div class="products-grid">
+            
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://www.koozo.com/cdn/shop/files/Smart_band.png?v=1763040146&width=533" alt="Pulse Smart Health Tracker">
+                    <span class="product-badge">SAVE 25%</span>
+                </div>
+                <div class="product-info">
+                    <h3>Pulse – Smart Health Tracker</h3>
+                    <div class="product-price">
+                        <span class="current">₹6,666</span>
+                        <span class="original">₹8,999</span>
+                    </div>
+                    <a href="https://www.koozo.com/products/qorfit-pulse-smart-health-tracker">
+    <button class="add-to-cart">Buy Now</button>
+</a>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://www.koozo.com/cdn/shop/files/2in1.png?v=1763040227&width=533" alt="Air Switch Pro">
+                    <span class="product-badge">SAVE 37%</span>
+                </div>
+                <div class="product-info">
+                    <h3>Air Switch Pro 2-in-1 Heater & Fan</h3>
+                    <div class="product-price">
+                        <span class="current">₹2,499</span>
+                        <span class="original">₹3,999</span>
+                    </div>
+                     <a href="https://www.koozo.com/products/2-in-1-heater-cooler">
+    <button class="add-to-cart">Buy Now</button>
+</a>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://www.koozo.com/cdn/shop/files/Smart_Mug.png?v=1763040272&width=533" alt="Smart Mug">
+                    <span class="product-badge">SAVE 33%</span>
+                </div>
+                <div class="product-info">
+                    <h3>Temperature Control Smart Mug</h3>
+                    <div class="product-price">
+                        <span class="current">₹6,666</span>
+                        <span class="original">₹9,999</span>
+                    </div>
+                     <a href="https://www.koozo.com/products/slursh-smart-mug">
+    <button class="add-to-cart">Buy Now</button>
+</a>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://www.koozo.com/cdn/shop/files/B-Bodysuit6.webp?v=1758631134&width=533" alt="Bodysuit">
+                    <span class="product-badge">SAVE 50%</span>
+                </div>
+                <div class="product-info">
+                    <h3>Backless Waist Reduction Bodysuit</h3>
+                    <div class="product-price">
+                        <span class="current">₹1,999</span>
+                        <span class="original">₹3,999</span>
+                    </div>
+                     <a href="https://www.koozo.com/products/backless-waist-reduction-bodysuit-new">
+    <button class="add-to-cart">Buy Now</button>
+</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- BRANDS -->
+    <section class="brands">
+        <div class="section-header">
+            <h2>Our Brands</h2>
+            <p>Curated collections for every lifestyle</p>
+        </div>
+      <div class="brands-grid">
+
+    <a href="#" class="brand-card">
+        <img src="https://www.koozo.com/cdn/shop/files/Slursh-png.png?v=1760355957" alt="Brand Logo">
+    </a>
+
+    <a href="#" class="brand-card">
+        <img src="https://www.koozo.com/cdn/shop/files/LivinH-png.png?v=1760355816" alt="Brand Logo">
+    </a>
+
+    <a href="#" class="brand-card">
+        <img src="https://www.koozo.com/cdn/shop/files/Nuwelo-png.png?v=1760355841" alt="Brand Logo">
+    </a>
+
+    <a href="#" class="brand-card">
+        <img src="https://www.koozo.com/cdn/shop/files/Trulittle-png.png?v=1760355999" alt="Brand Logo">
+    </a>
+
+    <a href="#" class="brand-card">
+        <img src="https://www.koozo.com/cdn/shop/files/Skimmylo-png.png?v=1760355911" alt="Brand Logo">
+    </a>
+
+    <a href="#" class="brand-card">
+        <img src="https://www.koozo.com/cdn/shop/files/Viva-Glam-png.png?v=1760356061" alt="Brand Logo">
+    </a>
+
+    <a href="#" class="brand-card">
+        <img src="https://www.koozo.com/cdn/shop/files/Qorfit-png.png?v=1760355872" alt="Brand Logo">
+    </a>
+
+    <a href="#" class="brand-card">
+        <img src="https://www.koozo.com/cdn/shop/files/H2QUA-logo-png.png?v=1760355775" alt="Brand Logo">
+    </a>
+
+</div>
+
+
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials">
+        <div class="section-header">
+            <h2>What Our Customers Say</h2>
+            <p>Real reviews from real people</p>
+        </div>
+        <div class="testimonials-grid">
+            
+            <div class="testimonial-card">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>"Super fast delivery and great product quality. The smart mug keeps my coffee warm for hours. Will definitely shop again!"</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">R</div>
+                    <div class="author-info">
+                        <h4>Ritika Sharma</h4>
+                        <span>Verified Buyer</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>"Loved the variety—found everything I needed in one place. The quality exceeded my expectations and pricing is very reasonable."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">A</div>
+                    <div class="author-info">
+                        <h4>Amit Kumar</h4>
+                        <span>Verified Buyer</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>"Easy checkout and smooth COD process. Very satisfied with the purchase. The smart health tracker is a game changer!"</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">N</div>
+                    <div class="author-info">
+                        <h4>Neha Patel</h4>
+                        <span>Verified Buyer</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Upgrade Your Lifestyle?</h2>
+            <p>Join thousands of happy customers and discover premium products for modern living</p>
+            <a href="https://www.koozo.com/" class="btn-primary">Start Shopping</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-brand">
+<h4>Also avilable on</h4>
+                       <a href="/" class="logo">
+    <img src="https://www.koozo.com/cdn/shop/files/blinkit.png?v=1765356448&width=480" 
+         alt="KOOZO Logo" 
+         style="height: 66px; width: auto;">
+</a><br>
+
+                    <br><p><h5>Koozo Commerce Pvt. Ltd.</h5>
+Splendor Spectrum One, Tower 1<br> 4th Floor, Golf Course Ext. Road Sector-58,<br> Gurugram, 122001, HR</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/share/1PmDSbqvWU/" class="logo">
+    <img src="https://cdn.shopify.com/s/files/1/0690/0160/9408/files/facebook.png?v=1765360337?v=1765356448&width=480" 
+         alt="KOOZO Logo" 
+         style="height: 20px; width: auto;">
+</a>
+                        <a href="https://www.instagram.com/social.koozo?igsh=MTRxM296aXNqemprdQ==" class="logo">
+    <img src="https://cdn.shopify.com/s/files/1/0690/0160/9408/files/instagram.png?v=1765360337?v=1765356448&width=480" 
+         alt="KOOZO Logo" 
+         style="height: 20px; width: auto;">
+</a>
+                      <a href="https://youtube.com/@koozo_commerce?si=MoHdtz2n6t0rBISQ" class="logo">
+    <img src="https://cdn.shopify.com/s/files/1/0690/0160/9408/files/youtube.png?v=1765360337?v=1765356448&width=480" 
+         alt="KOOZO Logo" 
+         style="height: 20px; width: auto;">
+</a>
+                      <a href="https://www.linkedin.com/company/koozocommerce/" class="logo">
+    <img src="https://cdn.shopify.com/s/files/1/0690/0160/9408/files/linkedin.png?v=1765360336?v=1765356448&width=480" 
+         alt="KOOZO Logo" 
+         style="height: 20px; width: auto;">
+</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Explore</h4>
+                    <a href="https://www.koozo.com/pages/about-us">About Us</a>
+                    <a href="https://www.koozo.com/collections/all">Our Products</a>
+                    <a href="blog">Blog</a>
+                    <a href="https://www.koozo.com/pages/partner-program">Partner Program</a>
+                    <a href="https://www.koozo.com/pages/bulk-orders">Bulk Orders</a>
+                    <a href="https://www.koozo.com/pages/track-order">Track Order</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Help</h4>
+                    <a href="https://www.koozo.com/pages/contact">Contact Us</a>
+                    <a href="https://www.koozo.com/pages/shipping-policy">Shipping Policy</a>
+                    <a href="https://www.koozo.com/pages/return-policy">Return Policy</a>
+                    <a href="https://www.koozo.com/pages/privacy-policy">Privacy Policy</a>
+                    <a href="https://www.koozo.com/pages/terms-of-service">Terms of Service</a>
+                    <a href="https://www.koozo.com/pages/disclaimer">Disclaimer</a>
+                </div>
+
+            </div>
+            <div class="footer-bottom">
+                © 2026 Koozo Commerce Pvt Ltd. All the purchases should be made on koozo.com official website only 
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
